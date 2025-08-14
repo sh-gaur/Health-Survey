@@ -54,10 +54,35 @@
 </div>
 
 <script>
-const GOOGLE_APPS_SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzHgOSpJQgxStd8df1nMGgMO5gxM9F_h7xW9gWr3dK7Cwm3_y2BMiSs1OJaRi3rGKOfvA/exec"; // Replace this with “Anyone” URL
+const GOOGLE_APPS_SCRIPT_WEBAPP_URL = "YOUR_DEPLOYED_GAS_WEBAPP_URL_HERE"; // Replace with your "Anyone" URL
 
-const doctorPhotos = [ /* your photo URLs */ ];
-const mentalHealthQuestions = [ /* your 10 questions */ ];
+// 10 Doctor Photos
+const doctorPhotos = [
+  "https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1579154204601-01588f351e85?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1606220838318-1d49b6ae1c94?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1622253693545-384f03c6c50b?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1601933470559-4e4f99a96d0f?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1588776814546-ec7f2bb39e4c?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1578496479939-1c66d1f14fd9?q=80&w=800&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1599058917212-d750089bc07d?q=80&w=800&auto=format&fit=crop"
+];
+
+// 10 Mental Health Questions
+const mentalHealthQuestions = [
+  "If you get a headache, do you worry it might be serious?",
+  "Do you avoid doctors because you're afraid of bad news?",
+  "Do you search online for symptoms when you feel unwell?",
+  "Do you often find yourself preoccupied with your health?",
+  "Do you feel anxious before medical appointments?",
+  "Do you avoid activities due to fear of getting sick?",
+  "Do you believe you get sick more often than others?",
+  "Does health anxiety interfere with your daily life?",
+  "Do you frequently check your body for unusual sensations?",
+  "Do you feel reassured only after multiple medical opinions?"
+];
 
 let photoIndex = 0;
 let surveyData = { photos: [], quiz: [], uid: Date.now(), startedAt: new Date().toISOString() };
