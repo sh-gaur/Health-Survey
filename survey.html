@@ -161,11 +161,16 @@ document.getElementById("submit-survey").addEventListener("click", async () => {
       body: JSON.stringify(payloadToSend)
     });
 
-    const text = await res.text();
-    console.log("Response text:", text);
-    if (!res.ok) throw new Error(`HTTP ${res.status} - ${text}`);
+    const json = await res.json();
+    console.log("Response JSON:", json);
 
-    sections.quiz.style.display="none"; sections.thanks.style.display="block"; updateProgress();
+    if(json.status === "ok") {
+      sections.quiz.style.display="none";
+      sections.thanks.style.display="block";
+      updateProgress();
+    } else {
+      throw new Error(json.message || "Unknown error");
+    }
 
   } catch(e) {
     console.error("Submit error:", e);
